@@ -1,0 +1,14 @@
+package com.itf.schulung.BankingApp.factory;
+
+public class BalanceFactory {
+	
+    public static double getCurrentBalance() {
+        Double min = -10000.00; //  Set To Your Desired Min Value
+        Double max = 50000.00; //    Set To Your Desired Max Value
+        double x = (Math.random() * ((max - min) + 1)) + min; //    This Will Create 
+        double currentBalance = Math.round(x * 100.0) / 100.0; // Creates Answer To 
+        return currentBalance; //    This Will Now Print Out The 
+        // Wenn noch Zeit da ist, dann ein Kontostand mit dem negativen Wert einbauen
+  }
+}
+

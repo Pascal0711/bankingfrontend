@@ -1,0 +1,143 @@
+package com.itf.schulung.BankingApp.model;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.web.bind.annotation.PathVariable;
+
+
+@Entity
+public class Customer {
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	public long id;
+		
+	@NotNull
+	public String customerPreName;
+	
+	@NotNull
+	public String customerLastName;		
+		
+	public String countryCode = "DE20";	
+	
+	@OneToOne(cascade = CascadeType.ALL)
+	private Adresse address_id;
+	
+	public String location;
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	List<Account> accounts;
+	
+	public double currentBalance;
+	
+	public String ibanNumber;
+	
+	public String accountType;
+	
+	public Customer() {
+	}
+	
+	public long getId() {
+		return id;
+	}
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+	public Adresse getAddress() {
+		return address_id;
+	}
+
+	public void setAddress(Adresse address) {
+		this.address_id = address;
+	}
+
+		public Customer(String customerPreName, String customerLastName) {
+		this.customerPreName = customerPreName;
+		this.customerLastName = customerLastName;
+	}
+
+	// todo Address Object dann muessen weniger parameter uebrgeben werden
+	public Customer(String customerPreName, String customerLastName, Adresse adress_id, Account accountId) {
+		this.customerPreName = customerPreName;
+		this.customerLastName = customerLastName;
+		/*
+		 * //this.street = street; this.streetName = streetName; this.streetNumber =
+		 * streetNumber; this.postalCode = postalCode;
+		 */
+	}
+
+	// todo extend for iban
+	// todo set all member here
+	public Customer(String string, double randomAmount, int i, String bankCode, int j) {
+	}
+
+	public long getCustomerId() {
+		return id;
+	}	
+
+	public String getCountryCode() {
+		return countryCode;
+	}
+
+	public void setCountryCode(String countryCode) {
+		this.countryCode = countryCode;
+	}
+	
+	public String getCustomerPreName() {
+		return customerPreName;
+	}
+
+	public void setCustomerPreName(String customerPreName) {
+		this.customerPreName = customerPreName;
+	}
+
+	public String getCustomerLastName() {
+		return customerLastName;
+	}
+	
+	public void setCustomerLastName(String customerLastName) {
+		this.customerLastName = customerLastName;
+	}
+	public Account getAccountId() {
+		return accountId;
+	}
+	public void setAccountId(Account accountId) {
+		this.accountId = accountId;
+	}
+	public double getCurrentBalance() {
+		return currentBalance;
+	}
+
+	public void setCurrentBalance(double currentBalance) {
+		this.currentBalance = currentBalance;
+	}
+	public String getIbanNumber() {
+		return ibanNumber;
+	}
+
+	public void setIbanNumber(String ibanNumber) {
+		this.ibanNumber = ibanNumber;
+	}
+
+	public String getAccountType() {
+		return accountType;
+	}
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+}

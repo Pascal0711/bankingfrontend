@@ -1,0 +1,74 @@
+package com.itf.schulung.BankingApp.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table (name = "CustomerData")
+public class CustomerData {
+	
+	@Id
+	private String preName;
+	private String lastName;
+	private String streetName;
+	private int houseNumber;
+	private double balance;
+	public String iban;
+	public String accountType;
+	
+	CustomerData () {}
+	CustomerData (String preName, String lastName, String streetName, int houseNumber, double balance, String iban, String accountType) {
+		this.preName = preName;
+		this.lastName = lastName;
+		this.streetName = streetName;
+		this.houseNumber = houseNumber;
+		this.balance = balance;
+		this.iban = iban;
+		this.accountType = accountType;
+	}
+	
+	public String getPreName() {
+		return preName;
+	}
+	public void setPreName(String preName) {
+		this.preName = preName;
+	}
+	public String getLastName() {
+		return lastName;
+	}
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
+	}
+	public String getStreetName() {
+		return streetName;
+	}
+	public void setStreetName(String streetName) {
+		this.streetName = streetName;
+	}
+	public int getHouseNumber() {
+		return houseNumber;
+	}
+	public void setHouseNumber(int houseNumber) {
+		this.houseNumber = houseNumber;
+	}
+	public double getBalance() {
+		return balance;
+	}
+	public void setBalance(double balance) {
+		this.balance = balance;
+	}
+	public String getIban() {
+		return iban;
+	}
+	public void setIban(String iban) {
+		this.iban = iban;
+	}
+	public String getAccountType() {
+		return accountType;
+	}
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
+	}
+
+}

@@ -1,0 +1,7 @@
+INSERT INTO ADRESSES (id, POSTAL_CODE , city, country) VALUES
+(1, 70439, 'Stuttgart', 'Baden-Württemberg'),
+(2, 60306, 'Frankfurt am Main', 'Hessen'),
+(3, 80331, 'München', 'Bayern'),
+(4, 14467, 'Potsdam', 'Brandenburg'),
+(5, 44787, 'Bochum', 'Nordrhein-Westfalen');
+

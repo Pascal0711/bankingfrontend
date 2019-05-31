@@ -1,0 +1,22 @@
+
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+    <span>Worldwide leader in online banking - over 18.000.000 customers trust our expertise</span>
+    <span class="example-spacer"></span>   
+  </mat-toolbar-row>
+  
+  <span class="add-customerPreName-id">Welcome to PA-BA Banking & Co. - New Generation Online Banking</span>
+  <input [formControl]="customerPreName" type="text" placeholder="insert customer prename...">
+  <input [formControl]="customerLastName" type="text" placeholder="insert customer lastname...">
+  <input [formControl]="streetName" type="text" placeholder="insert street name...">
+  <input [formControl]="streetNumber" type="number" placeholder="insert house number...">
+  <input [formControl]="postalCode" type="number" placeholder="insert postal code...">
+  <input [formControl]="city" type="text" placeholder="insert place of residence...">
+  <input [formControl]="country" type="text" placeholder="insert federal state...">
+
+  <input [formControl]="balance" type="number" placeholder="insert current balance...">
+  <input [formControl]="iban" type="text" placeholder="insert IBAN...">
+  <input [formControl]="accountType" type="text" placeholder="insert account type...">
+  
+  <button class="add-customer-button" (click)="postCustomer()">Add new customer</button>
+

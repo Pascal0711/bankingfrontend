@@ -1,0 +1,1 @@
+SELECT * FROM city JOIN street_name ON city.id = street_name.id

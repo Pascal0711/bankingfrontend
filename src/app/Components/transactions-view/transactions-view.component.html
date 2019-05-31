@@ -1,0 +1,6 @@
+
+<router-outlet></router-outlet>
+<input [formControl]="origin" type="string" placeholder="enter sender IBAN" [(ngModel)]="saveOrigin"/>
+<input [formControl]="destination" type="string" placeholder="enter receiver IBAN" [(ngModel)]="saveDestination"/>
+<input [formControl]="amount" type="number" placeholder="enter amount to transfer" [(ngModel)]="saveAmount"/>
+<button type= "button" mat-flat-button color="primary" (click) = "postTransaction()">execute transaction</button>

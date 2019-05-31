@@ -1,0 +1,138 @@
+package com.itf.schulung.BankingApp.transaction;
+
+import java.util.Scanner;
+
+import com.itf.schulung.BankingApp.factory.BalanceFactory;
+import com.itf.schulung.BankingApp.factory.CustomerFactory;
+	
+public class Transactions {
+	
+	public static void main(String[] args) {
+		
+		BalanceFactory bf= new BalanceFactory();
+		bf.getCurrentBalance();
+		
+		CustomerFactory cf = new CustomerFactory();
+		cf.getPreName();
+		cf.getLastName();
+		
+		BankAccount obj1 = new BankAccount("XYZ", "BA001"); //Customer Name und Id in Klammern
+		obj1.showMenu();
+	}
+	
+}
+	
+		
+class BankAccount {
+
+	double balance; //Geld auf dem Konto
+	double previousTransaction; //die letzte überwiesene Transaktion
+	String customerName;
+	String customerId; //CustomerId muss so eingerichtet werden, dass die zufällig generierte hier auftaucht
+	
+	
+	BankAccount(String cname, String cid) { //Konstruktor! cname = Customer name, cid =Customer id
+		customerName = cname;
+		customerId = cid;
+	} 
+	
+	//set balance to 0.00
+	public void UserAccount() {
+		balance = 0.0;	
+	}
+	
+	//Deposit
+	public void deposit(double amount) {
+		if(amount != 0) {
+			balance = balance + amount;
+			previousTransaction = amount;
+		}
+		
+	}
+	//Withdraw
+	public void withdraw(double amount) {
+		if(amount != 0) {
+			balance = balance - amount;
+			previousTransaction = -amount;
+		}
+	}
+	
+	public void getPreviousTransaction() {
+		if(previousTransaction > 0) {
+			System.out.println("Deposited: " + previousTransaction);
+		}
+		else if(previousTransaction < 0) {
+			System.out.println("Withdrawn: " + Math.abs(previousTransaction));
+		}
+		else {
+			System.out.println("No transaction occured");
+		}
+	}
+	public void showMenu() {   //Menu for the customer
+		char option = '\0';
+		Scanner scanner = new Scanner(System.in);
+		System.out.println("Welcome " + customerName);
+		System.out.println("Your ID is " + customerId);
+		System.out.println("\n");
+		System.out.println("A. Check Balance");
+		System.out.println("B. Deposit");
+		System.out.println("C. Withdraw");
+		System.out.println("D. Previous transaction");
+		System.out.println("E. Exit");
+		
+		do {
+			System.out.println("===========================================================");
+			System.out.println("Enter an option");
+			System.out.println("===========================================================");
+			option = scanner.next().charAt(0);
+			System.out.println("\n");
+			
+			switch(option) {
+			
+			case 'A':
+				System.out.println("-------------------------------------");
+				System.out.println("Balance = " + balance);
+				System.out.println("-------------------------------------");
+				System.out.println("\n");
+				break;
+				
+			case 'B':
+				System.out.println("-------------------------------------");
+				System.out.println("Enter an amount to deposit:");
+				System.out.println("-------------------------------------");
+				double amount = scanner.nextInt();
+				deposit(amount);
+				System.out.println("\n");
+				break;
+				
+			case 'C':
+				System.out.println("-------------------------------------");
+				System.out.println("Enter an amount to withdraw:");
+				System.out.println("-------------------------------------");
+				double amount2 = scanner.nextInt();
+				withdraw(amount2);
+				System.out.println("\n");
+				break;
+			
+			case 'D':
+				System.out.println("-------------------------------------");
+				getPreviousTransaction();
+				System.out.println("-------------------------------------");
+				System.out.println("\n");
+				break;
+				
+			default:
+				System.out.println("Invalid Option! !.Please enter again");
+				break;
+				
+			case 'E':
+				System.out.println("*************************************************");
+				break;
+			}
+		} while(option != 'g');
+		
+		System.out.println("Thank You for using our services");
+	}
+}
+	
+	

@@ -1,0 +1,44 @@
+<p [style.background-color]="'white'">
+<div style="background-color: rgba(255, 166, 0, 0.925)">
+  Welcome to PA-BA Banking & Co. - New Generation Online Banking
+<ul>
+  <li *ngFor="let customer of customers">
+    Customer id: {{customer.id}}, 
+    Customer prename: {{customer.customerPreName}},
+    Customer surname: {{customer.customerLastName}},
+    <button type="button" (click)="deleteSingleCustomer(customer.id)">delete</button>
+  </li>
+  <li *ngFor="let adresse of adresses">
+    Customer id: {{adresse.id}},
+    Street name: {{adresse.streetName}},
+    House Number: {{adresse.streetNumber}},
+    Postal code: {{adresse.postalCode}},
+    City: {{adresse.city}},
+    Federal state: {{adresse.country}},
+  </li>
+  <li *ngFor="let account of accounts">
+    Customer id: {{account.id}},
+    Account balance: {{account.balance}},
+    IBAN: {{account.iban}},
+    Account type: {{account.accountType}}
+  </li>
+</ul>
+
+
+<button type= "button" mat-flat-button color="primary" (click) = "showCustomers(saveId)">Show customer by id</button>
+<input type="number" placeholder="enter id" [(ngModel)]="saveId"/>
+{{idFound.id}}
+{{idFound.customerPreName}}
+{{idFound.customerLastName}}
+
+{{idFound.streetName}}
+{{idFound.streetNumber}}
+{{idFound.postalCode}}
+{{idFound.city}}
+{{idFound.country}}
+
+{{idFound.balance}}
+{{idFound.iban}}
+{{idFound.accountType}}
+<!-- {{idFound | json}} -->
+</div>

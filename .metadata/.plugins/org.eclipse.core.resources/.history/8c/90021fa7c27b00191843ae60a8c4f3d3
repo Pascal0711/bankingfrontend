@@ -1,0 +1,22 @@
+package com.itf.schulung.BankingApp.model;
+
+import com.itf.schulung.BankingApp.factory.CustomerFactory;
+
+public class RandomCostumerId {
+
+	public RandomCostumerId(){
+	
+	for(int x = 0;x<=5000;x++){
+			CustomerFactory a = new CustomerFactory();
+				a.getPreName();
+				return;
+				
+			}
+//	 public static void main(String[] args) {
+//	    	System.out.println(RandomCostumerId());
+//1.Welcome - Link weiter -> Liste
+//2.CustomerID (1-5.000)     CustomerName          Adresse        accountID (zufällig)        Kontostand (balance)    
+
+	    }
+} 	
+

@@ -1,0 +1,6 @@
+INSERT INTO CUSTOMERDATA (id, PRE_NAME, LAST_NAME, STREET_NAME, HOUSE_NUMBER, balance, iban, ACCOUNT_TYPE) VALUES
+(1, 'Max', 'Mustermann', 'Musterstrasse', 16, 5000, 'DE20500334966564890986', 'saving account'),
+(2, 'Martina', 'Musterfrau', 'Musterstrasse', 28, 7500, 'DE20500334964851974316', 'deposit account'),
+(3, 'Frido', 'Vorlagenmann', 'Vorlagegasse', 101, -1200, 'DE20500334963907023578', 'saving account'),
+(4, 'Stefan', 'Standard', 'Standardweg', 2, 40000, 'DE20500334969545070683', 'deposit account'),
+(5, 'Bernd', 'Beispiel', 'Beispielstrasse', 93, -700, 'DE20500334963433449376', 'credit card account');

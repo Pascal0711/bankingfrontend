@@ -1,0 +1,23 @@
+INSERT INTO ACCOUNT (ID, BALANCE, IBAN) VALUES
+(1, 14124.44, 'DE20 5003 3496 4532 0980 10'),
+(2, 3855.04, 'DE20 5003 3496 2134 3221 10'),
+(3, -231.87, 'DE20 5003 3496 3451 6572 10'),
+(4, 13829.05, 'DE20 5003 3496 8008 1015 10'),
+(5, 99283.36, 'DE20 5003 3496 7520 2903 10'),
+(6, 2837.372, 'DE20 5003 3496 1350 1909 10');
+
+INSERT INTO ADRESSES (addres_id, POSTAL_CODE , city, country, street_number) VALUES
+(1, 70439, 'Stuttgart', 'Baden-Württemberg', 68),
+(2, 60306, 'Frankfurt am Main', 'Hessen', 15),
+(3, 80331, 'München', 'Bayern', 29),
+(4, 34123, 'Kassel', 'Hessen', 12),
+(5, 46236, 'Bottrop', 'Nordrhein-Westfalen', 11),
+(6, 50423, 'Bonn', 'Nordrhein-Westfalen', 11);
+
+INSERT INTO CUSTOMER (id, 	CUSTOMER_LAST_NAME , CUSTOMER_PRE_NAME, adress_addres_id) VALUES
+(1, 'Schmitz', 'Franz-Josef', 1),
+(2, 'Schuster', 'Bettina', 2),
+(3, 'Erikson', 'Erik', 3),
+(4, 'Leonardo', 'Diovelli', 4),
+(5, 'Nagayaki', 'Kentaro', 5),
+(6, 'Xhu', 'Shiu', 6);

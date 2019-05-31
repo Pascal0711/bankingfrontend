@@ -1,0 +1,61 @@
+package com.itf.schulung.BankingApp.model;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "Adresses")
+public class Adresse {
+
+	@Id
+	private Long addres_id;
+	
+	private Integer postalCode;
+	
+	private String city;
+	
+	private String country;
+
+	Adresse() {
+	}
+
+	Adresse(Long addres_id, int postalCode, String city, String country) {
+		this.addres_id = addres_id;
+		this.postalCode = postalCode;
+		this.city = city;
+		this.country = country;
+	}
+
+	public Long getAddres_id() {
+		return addres_id;
+	}
+
+	public void setAddres_id(Long addres_id) {
+		this.addres_id = addres_id;
+	}
+
+	public int getPostalCode() {
+		return postalCode;
+	}
+
+	public void setPostalCode(int postalCode) {
+		this.postalCode = postalCode;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+}

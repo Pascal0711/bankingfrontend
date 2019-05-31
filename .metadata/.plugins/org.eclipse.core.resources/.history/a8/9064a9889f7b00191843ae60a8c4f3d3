@@ -1,0 +1,13 @@
+INSERT INTO ADRESSES (id, POSTAL_CODE , city, country) VALUES
+(1, 70439, 'Stuttgart', 'Baden-Württemberg'),
+(2, 60306, 'Frankfurt am Main', 'Hessen'),
+(3, 80331, 'München', 'Bayern'),
+(4, 14467, 'Potsdam', 'Brandenburg'),
+(5, 44787, 'Bochum', 'Nordrhein-Westfalen');
+
+INSERT INTO CUSTOMERDATA (id, pre_name, last_name, street_name, house_number, balance, iban, account_type) VALUES
+(1, 'Max', 'Mustermann', 'Musterstrasse', 16, 503.92, 'DE20500334966564890986', 'saving account'),
+(2, 'Martina', 'Musterfrau', 'Musterstrasse', 28, 751.10, 'DE20500334964851974316', 'deposit account'),
+(3, 'Frido', 'Vorlagenmann', 'Vorlagegasse', 101, 120.45, 'DE20500334963907023578', 'saving account'),
+(4, 'Stefan', 'Standard', 'Standardweg', 2, 40.77, 'DE20500334969545070683', 'deposit account'),
+(5, 'Bernd', 'Beispiel', 'Beispielstrasse', 93, 70.31, 'DE20500334963433449376', 'credit card account');

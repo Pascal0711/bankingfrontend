@@ -1,0 +1,59 @@
+package com.itf.schulung.BankingApp.Controller;
+
+import java.util.Collections;
+import java.util.Optional;
+import java.util.Random;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.itf.schulung.BankingApp.factory.CustomerFactory;
+import com.itf.schulung.BankingApp.model.Customer;
+import com.itf.schulung.BankingApp.repositories.CustomerRepository;
+
+@RestController
+public class AppController {
+	
+	@Autowired
+	private CustomerRepository customerRepo;
+	
+	@GetMapping(value = "/onlineBanking/{id}")
+//	public Customer welcomeCustomer(Model model, @PathVariable long id) {
+	public Customer welcomeCustomer(@PathVariable long id) {
+		Customer cust = customerRepo.findById(id).get();
+//		model.addAttribute("customer", cust.getCustomerLastName());
+////		model.addAttribute("customer", cust.getCustomerPreName());
+//		model.addAttribute("countryCode", cust.getCountryCode());
+////		model.addAttribute("streetName", cust.getStreetName());
+////		model.addAttribute("accountId", cust.getAccountId());
+////		model.addAttribute("currentBalance", cust.getCurrentBalance());
+////		model.addAttribute("ibanNumber", cust.getIbanNumber());
+////		model.addAttribute("accountTypes", cust.getAccountType());
+//		bankingAppTemplate
+		 return cust;
+	}
+	
+	//customer soll alle Informationen über die Kunden erhalten: Customer Id,
+	//Vor- und Nachname, AccountId 
+	@GetMapping(value="/customerid") //Customer Id
+	public String showCustomerId() {
+		return "a"; //oder get.PreName? -> RandomCustomerId überarbeiten
+	}
+	
+	@GetMapping(value="/customers", produces="text/html") //Liste an Kunden, Vor- und Nachname
+	public String showCustomerList(Model model) {
+		// todo load customers from database
+		model.addAttribute("customers", customerRepo.findAll());
+		return "customer-list";
+	}
+
+	@GetMapping(value= "/")
+	public String home() {	
+		return "home";
+
+	}
+}

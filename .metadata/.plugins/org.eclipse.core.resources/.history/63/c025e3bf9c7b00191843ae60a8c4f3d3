@@ -1,0 +1,2 @@
+INSERT INTO CUSTOMERDATA (preName, lastName, streetName, houseNumber, balance, iban, accountType) VALUES
+(),

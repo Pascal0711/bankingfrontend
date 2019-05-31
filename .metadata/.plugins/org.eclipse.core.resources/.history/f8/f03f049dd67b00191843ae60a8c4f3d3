@@ -1,0 +1,13 @@
+INSERT INTO ADRESSES (addres_id, POSTAL_CODE , city, country, street_number) VALUES
+(1, 70439, 'Stuttgart', 'Baden-Württemberg', 12),
+(2, 60306, 'Frankfurt am Main', 'Hessen', 12),
+(3, 80331, 'München', 'Bayern', 12),
+(4, 14467, 'Potsdam', 'Brandenburg', 12),
+(5, 44787, 'Bochum', 'Nordrhein-Westfalen', 11);
+
+INSERT INTO CUSTOMER (id, 	CUSTOMER_LAST_NAME , CUSTOMER_PRE_NAME, adress_addres_id) VALUES
+(1, 'Max', 'Mustermann', 1),
+(2, 'Martina', 'Musterfrau', 2),
+(3, 'Frido', 'Vorlagenmann', 3),
+(4, 'Stefan', 'Standard', 4),
+(5, 'Bernd', 'Beispiel', 5);

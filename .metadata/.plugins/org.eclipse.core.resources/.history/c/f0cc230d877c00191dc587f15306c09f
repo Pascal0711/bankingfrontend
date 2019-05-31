@@ -1,0 +1,7 @@
+//package com.itf.schulung.BankingApp.repositories;
+//
+//import org.springframework.data.repository.CrudRepository;
+//
+//public interface TransferRepository extends CrudRepository<String, Long> {
+//
+//}

@@ -1,0 +1,5 @@
+package com.itf.schulung.BankingApp.model;
+
+public class CustomerData {
+
+}
